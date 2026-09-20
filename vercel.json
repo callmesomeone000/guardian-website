@@ -1,11 +1,5 @@
 {
   "buildCommand": "npm install --legacy-peer-deps && npm run build",
   "devCommand": "npm run dev",
-  "installCommand": "npm install --legacy-peer-deps",
-  "framework": "nextjs",
-  "functions": {
-    "src/app/**/*.tsx": {
-      "maxDuration": 30
-    }
-  }
+  "installCommand": "npm install --legacy-peer-deps"
 }
