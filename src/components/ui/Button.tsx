@@ -30,6 +30,20 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
     const Comp = asChild ? Slot : 'button';
 
+    // Slot (asChild) requires exactly one React element child, so it must
+    // just pass `children` straight through with no extra siblings.
+    if (asChild) {
+      return (
+        <Comp
+          ref={ref}
+          className={cn(baseClasses, variantClasses[variant], sizeClasses[size], className)}
+          {...props}
+        >
+          {children}
+        </Comp>
+      );
+    }
+
     return (
       <Comp
         ref={ref}
